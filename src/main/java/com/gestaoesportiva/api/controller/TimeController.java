@@ -23,7 +23,7 @@ public class TimeController {
 
     @GetMapping
     public ResponseEntity<Page<DadosListagemTime>> listarTimes(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        var pagina = timeService.listar(paginacao);
+        var pagina = timeService.get(paginacao);
         return ResponseEntity.ok(pagina);
     }
 
@@ -31,7 +31,7 @@ public class TimeController {
     @Transactional
     public ResponseEntity<Time> criarTime(@RequestBody DadosCadastroTime dados) {
         try {
-            Time novoTime = timeService.criarTime(dados);
+            Time novoTime = timeService.create(dados);
             return ResponseEntity.ok(novoTime);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

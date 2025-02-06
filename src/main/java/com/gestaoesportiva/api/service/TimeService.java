@@ -17,7 +17,7 @@ public class TimeService {
     @Autowired
     public TimeRepository timeRepository;
 
-    public Time criarTime(DadosCadastroTime dados) {
+    public Time create(DadosCadastroTime dados) {
         Time newTime = new Time();
 
         newTime.setNome(dados.nome());
@@ -31,7 +31,7 @@ public class TimeService {
         return newTime;
     }
 
-    public Page<DadosListagemTime> listar(Pageable paginacao) {
+    public Page<DadosListagemTime> get(Pageable paginacao) {
         Page<Time> times = timeRepository.findAll(paginacao);
         return times.map(DadosListagemTime::new);
     }
