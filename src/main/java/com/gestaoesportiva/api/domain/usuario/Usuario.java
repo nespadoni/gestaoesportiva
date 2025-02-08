@@ -38,9 +38,16 @@ public class Usuario implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.role == Role.FEDERACAO) return List.of(new SimpleGrantedAuthority("ROLE_" + this.role.getRole().toUpperCase()));
-        else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        // Se o papel (role) do usuário for 'FEDERACAO', retorna a autoridade correspondente ao papel
+        if (this.role == Role.FEDERACAO) {
+            return List.of(new SimpleGrantedAuthority("ROLE_" + this.role.getRole().toUpperCase()));
+        }
+        // Caso contrário, o usuário recebe a autoridade padrão 'ROLE_USER'
+        else {
+            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        }
     }
+
 
     public String getPassword() {
         return senha;
