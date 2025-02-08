@@ -16,11 +16,11 @@ import java.io.IOException;
 
 /**
  * Filtro de segurança que valida o token JWT nas requisições HTTP.
- *
+ * <p>
  * Esse filtro verifica a presença de um token JWT nas requisições, valida o token,
  * recupera as informações do usuário e autentica o usuário no contexto de segurança
  * da aplicação.
- *
+ * <p>
  * A classe é um componente do Spring e é executada a cada requisição feita à aplicação.
  */
 @Component

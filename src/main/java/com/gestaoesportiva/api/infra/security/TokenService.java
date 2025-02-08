@@ -26,7 +26,7 @@ public class TokenService {
      * O valor é injetado de um arquivo de configuração (ex: application.properties).
      */
     @Value("${api.security.token.secret}")
-    private String secret;
+    String secret;
 
     /**
      * Gera um token JWT para o usuário fornecido.
