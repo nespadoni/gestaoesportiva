@@ -1,6 +1,6 @@
 package com.gestaoesportiva.api.infra.security;
 
-import com.gestaoesportiva.api.repositories.UsuarioRepository;
+import com.gestaoesportiva.api.infra.repository.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,6 +1,6 @@
 package com.gestaoesportiva.api.infra.security;
 
-import com.gestaoesportiva.api.repositories.UsuarioRepository;
+import com.gestaoesportiva.api.infra.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
