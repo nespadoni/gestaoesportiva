@@ -17,11 +17,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class ArbitroService {
 
-    @Autowired
-    public ArbitroRepository arbitroRepository;
+    public final ArbitroRepository arbitroRepository;
 
-    @Autowired
-    public FederacaoRepository federacaoRepository;
+    public final FederacaoRepository federacaoRepository;
+
+    public ArbitroService(ArbitroRepository arbitroRepository, FederacaoRepository federacaoRepository) {
+        this.arbitroRepository = arbitroRepository;
+        this.federacaoRepository = federacaoRepository;
+    }
 
     public Arbitro cadastrar(DadosCadastroArbitro dados) {
         Arbitro newArbitro = new Arbitro();
