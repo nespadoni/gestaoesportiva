@@ -14,8 +14,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class TimeService {
 
-    @Autowired
-    public TimeRepository timeRepository;
+    public final TimeRepository timeRepository;
+
+    public TimeService(TimeRepository timeRepository) {
+        this.timeRepository = timeRepository;
+    }
 
     public Time create(DadosCadastroTime dados) {
         Time newTime = new Time();

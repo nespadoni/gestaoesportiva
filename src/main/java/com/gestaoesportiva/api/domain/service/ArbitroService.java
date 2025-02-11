@@ -29,9 +29,9 @@ public class ArbitroService {
         Arbitro dupla = arbitroRepository.findById(dados.duplaId())
                 .orElseThrow(() -> new ArbitroNaoEncontradoException("Arbitro de dupla não encontrado"));
 
-        Federacao federacao = federacaoRepository.findById(dados.federacaoId())
-                        .orElseThrow(() -> new FederacaoNaoEncontradaException("Federação não encontrada"));
 
+        Federacao federacao = federacaoRepository.findById(dados.federacaoId())
+                .orElseThrow(() -> new FederacaoNaoEncontradaException("Federação não encontrada"));
         newArbitro.setNome(dados.nome());
         newArbitro.setDupla(dupla);
         newArbitro.setEmail(dados.email());

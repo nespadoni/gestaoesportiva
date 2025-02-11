@@ -8,6 +8,7 @@ import com.gestaoesportiva.api.domain.service.CampeonatoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,10 +20,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/campeonatos")
 @Tag(name = "Campeonatos", description = "Gerenciamento de Campeonatos")
+@RequiredArgsConstructor
 public class CampeonatoController {
 
-    @Autowired
-    private CampeonatoService campeonatoService;
+    private final CampeonatoService campeonatoService;
 
     @GetMapping
     @Operation(summary = "Lista todos os Campeonatos", description = "Retorna uma página com todos os campeonatos")
