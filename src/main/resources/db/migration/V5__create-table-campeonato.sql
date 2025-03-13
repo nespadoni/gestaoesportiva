@@ -1,4 +1,4 @@
-create table arbitro(
+create table campeonato(
 
     id BIGSERIAL primary key,
     titulo varchar(100) not null,
